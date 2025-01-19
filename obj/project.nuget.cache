@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "cxFPiaW8FzE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tejas\\source\\repos\\AI_Chatbot_Integration\\AI_Chatbot_Integration\\AI_Chatbot_Integration.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tejas\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
+    "C:\\Users\\Tejas\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\Tejas\\.nuget\\packages\\openai.api\\1.0.0\\openai.api.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

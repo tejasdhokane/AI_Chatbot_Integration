@@ -1,0 +1,40 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "AI Chatbot";
+}
+
+<h2>AI Chatbot</h2>
+
+<div id="chat-container">
+    <div id="chat-box">
+        <div id="chat-log"></div>
+    </div>
+    <input type="text" id="user-message" placeholder="Type a message..." />
+    <button id="send-button">Send</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#send-button').click(function () {
+            var userMessage = $('#user-message').val();
+            if (userMessage.trim() === '') return;
+
+            // Display user message
+            $('#chat-log').append('<div><b>You:</b> ' + userMessage + '</div>');
+            $('#user-message').val('');
+
+            // Send message to the server and get AI response
+            $.post('@Url.Action("GetResponse", "Chatbot")', { userMessage: userMessage }, function (data) {
+                if (data.response) {
+                    $('#chat-log').append('<div><b>AI:</b> ' + data.response + '</div>');
+                } else if (data.error) {
+                    $('#chat-log').append('<div><b>Error:</b> ' + data.error + '</div>');
+                }
+            });
+        });
+    });
+</script>
